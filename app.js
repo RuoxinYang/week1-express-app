@@ -52,7 +52,7 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/demo", 
+app.get("/demo",
         function (req, res){res.render("demo");});
 
 app.get("/about", (request, response) => {
@@ -63,10 +63,60 @@ app.get("/form", (request,response) => {
   response.render("form")
 })
 
+app.get("/dataDemo", (request,response) => {
+  response.locals.name="Tim Hickey"
+  response.locals.vals =[1,2,3,4,5]
+  response.locals.people =[
+    {'name':'Tim','age':65},
+    {'name':'Yas','age':29}]
+  response.render("dataDemo")
+})
+
 app.post("/showformdata", (request,response) => {
   response.json(request.body)
 })
 
+app.get("/superherog", (request,response) => {
+  response.render("superherog")
+})
+
+app.post('/superherop', (req,res) => {
+  res.locals.name=req.body.name
+  res.locals.gender=req.body.gender
+  res.locals.age=req.body.age
+  res.locals.pro=check(req.body.gender)
+  res.locals.powers = req.body.powers
+
+app.get("/fo", (request,response) => {
+  response.render("fo")
+})
+
+
+app.post("/showfoods",
+  async (req,res,next) => {
+    try {
+      const food = req.body.food
+      const url = "https://api.nal.usda.gov/fdc/v1/foods/search?query="+food+"&pageSize=2&api_key=XnldbUVobwtWVk7okOaqtHPgMbOSrwLWYj2mdWGz"
+      const result = await axios.get(url)
+      console.dir(result.data)
+      console.log('foods')
+      console.dir(result.data.results)
+      res.locals.foods = result.data.foods
+      //res.json(result.data)
+      res.render('showfoods')
+    } catch(error){
+      next(error)
+    }
+})
+
+  res.render('superherop')
+})
+
+function check(gender){
+  if(gender=="Female") return"she"
+  if(gender=="Male") return"he"
+  if(gender=="Nonsexual") return"it"
+}
 // Here is where we will explore using forms!
 
 
@@ -75,7 +125,7 @@ app.post("/showformdata", (request,response) => {
 // and send it back to the browser in raw JSON form, see
 // https://covidtracking.com/data/api
 // for all of the kinds of data you can get
-app.get("/c19", 
+app.get("/c19",
   async (req,res,next) => {
     try {
       const url = "https://covidtracking.com/api/v1/us/current.json"

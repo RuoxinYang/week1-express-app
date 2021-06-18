@@ -9,73 +9,108 @@
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th>English</th> 
-      <th>Spanish</th> 
-      <th>Japanese</th>
+      <th></th>
+      <th>Superman</th>
+      <th>Batman</th>
+      <th>Flash</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>one</td>
-      <td>uno</td>
-      <td>ichi</td>
+      <td>Copyright</td>
+      <td>DC</td>
+      <td>DC</td>
+      <td>DC</td>
     </tr>
     <tr>
-      <td>two</td>
-      <td>dos</td>
-      <td>ni</td>
+      <td>Height</td>
+      <td>6'3"</td>
+      <td>6'2"</td>
+      <td>5'11"</td>
     </tr>
     <tr>
-      <td>three</td>
-      <td>tres</td>
-      <td>san</td>
-    </tr>   
-  </tbody> 
+      <td>ability</td>
+      <td>Super strength</td>
+      <td>Super intelligence</td>
+      <td>Super speed</td>
+    </tr>
+  </tbody>
 </table>
 
 <hr>
-<h2>Follow the links!</h2>
-<ol>
-     <li><a href="images/dog.jpg">Dog</a></li>
-     <li><a href="images/cat.jpg">Cat</a></li>
-     <li><a href="http://www.brandeis.edu">Brandeis</a></li>
-</ol>
+<h2>Members of League of Justice</h2>
+<ul>
+     <li>Superman</li>
+     <li>Flash</li>
+     <li>Batman</li>
+     <li>Wonder Woman</li>
+     <li>Green Lantern</li>
+     <li>Aquaman</li>
+     <li>Cyborg</li>
+</ul>
+<hr>
+<h2>Links to wikipedia</h2>
+<div class="row">
+  <div class="col">
+    <li>Superman</li>
+    <a href="https://en.wikipedia.org/wiki/Superman"><img src="/images/superman.jpeg" width="200"></a>
+  </div>
+  <div class="col">
+    <li>Batman</li>
+    <a href="https://en.wikipedia.org/wiki/Batman"><img src="/images/batman.jpeg" width="200"></a>
+  </div>
+  <div class="col">
+    <li>Flash</li>
+    <a href="https://en.wikipedia.org/wiki/Flash"><img src="/images/flash.jpeg" width="200"></a>
+  </div>
+</div>
+
 <hr>
 
-<h1> Four Colors </h1>
-<ul>
-<li> red </li>
-<li> green </li>
-<li> blue </li>
-<li> black </li>
-</ul>
+<form method="post" action="/showformdata" class="bg-info" >
+  When were you born?
+  <input type="date"
+         name="birthday">
+  <br>
+  What is your favorite color?
+  <input type="color"
+         name="favoriteColor">
+  <br>
+  Who is your favorite super hero:
+  <input type="text"
+         name="favorite super hero"
+         placeholder="your favorite super hero">
+  <br>
+  Have you ever seen any super hero movies?<br>
+         yes <input type="radio" name="Movie" value="yes"><br>
+         no  <input type="radio" name="Movie" value="no">
+  <br>
+  which one is your favorite movie?
+  <select name="favorite movie">
+    <option>Superman</option>
+    <option>Wonder Woman</option>
+    <option>Batman</option>
+    <option>League of Justice</option>
+    <option>None</option>
+  </select>
+  <br>
+  Why is he/she your favorite super hero:
+  <br>
+  <textarea name="Why" rows="10" cols="40"></textarea>
+  <br>
 
-  <img src="images/dog.jpg" width="200">
+ Which heros do you like<br>
+  Superman <input type="checkbox" name="interest" value="Superman"><br>
+  Batman  <input type="checkbox" name="interest" value="Batman"><br>
+  Wonder Woman <input type="checkbox" name="interest" value="Wonder Woman"><br>
+  Flash
+          <input type="checkbox" name="interest" value="lash"><br>
+  Cyborg
+          <input type="checkbox" name="interest" value="Cyborg"><br>
   <hr>
-  <a href="http://www.brandeis.edu">Brandeis</a>
+  <input type="submit" value="Register now">
+</form>
 
-  <h6>Count to 3 in Spanish</h6>
-  <ol>
-    <li>uno</li>
-    <li>dos</li>
-    <li>tres</li>
-  </ol>
-
-  <div>
-    This is a div element
-  </div>
-
-  <div class="row">
-    <div class="col">
-      First Column
-      <img src="images/dog.jpg" 
-       width="200">
-    </div>
-    <div class="col">
-      Second Column
-      <img src="images/cat.jpg" 
-       width="200">
-    </div>
-  </div>
+<hr>
 
 <%- include('bootfooter') -%>

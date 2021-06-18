@@ -1,0 +1,17 @@
+<%- include('bootheader') -%>
+
+<%- include('menubar') -%>
+
+    <div class="jumbotron">
+        <h1><%=name%>!</h1>
+        <p>  Information:</p>
+    </div>
+    <div class="col bg-danger text-black">
+      <%=name%> is a <%=gender%>, and <%=pro%> is <%=age%> years old, and his superpowers are：
+      <%  powers.map((item) => {%>
+        <%= item %>,
+      <%})%>
+    </div>
+
+
+<%- include('bootfooter') -%>

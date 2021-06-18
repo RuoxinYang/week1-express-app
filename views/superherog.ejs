@@ -1,0 +1,30 @@
+<%- include('bootheader') -%>
+
+<%- include('menubar') -%>
+
+    <div class="jumbotron">
+        <h1>Build your own Superhero</h1>
+        <p> Enter info for your Superhero</p>
+    </div>
+    <div class="col bg-warning text-black">
+    <form method="post" action="/superherop">
+        What's the name of your superhero <input type="text" name="name" size='30'> <br>
+        What's his/her/its age <input type="number" name="age" size='30'> <br>
+        <select name="gender">
+          <option>Male</option>
+          <option>Female</option>
+          <option>Nonsexual</option>
+        </select><br>
+        Superpowers:<br>
+         Super speed <input type="checkbox" name="powers" value="Super speed"><br>
+         Super strength  <input type="checkbox" name="powers" value="Super strength"><br>
+         Super intelligence<input type="checkbox" name="powers" value="Super intelligence"><br>
+         Shape shifting<input type="checkbox" name="powers" value="Shape shifting"><br>
+         Invisible <input type="checkbox" name="powers" value="Invisibility"><br>
+         Telepath <input type="checkbox" name="powers" value="Telepath"><br>
+        <input type="submit" value="Creat!">
+    </form>
+    </div>
+
+
+<%- include('bootfooter') -%>
