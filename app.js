@@ -86,6 +86,8 @@ app.post('/superherop', (req,res) => {
   res.locals.age=req.body.age
   res.locals.pro=check(req.body.gender)
   res.locals.powers = req.body.powers
+  res.render('superherop')
+})
 
 app.get("/fo", (request,response) => {
   response.render("fo")
@@ -107,9 +109,6 @@ app.post("/showfoods",
     } catch(error){
       next(error)
     }
-})
-
-  res.render('superherop')
 })
 
 function check(gender){

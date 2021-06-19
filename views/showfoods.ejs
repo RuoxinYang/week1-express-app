@@ -7,22 +7,24 @@
 </div>
 
 
-<form method="post" action="/getfoods">
+<form method="post" action="/showfoods">
     What kind of foods do you want? (one word)
     <input type="text" name="food"><br>
     <input type="submit">
 </form>
 
-<img src="/images/batman.jpg" width="50">
+<img src="/images/batman.jpeg" width="50">
 
 <% foods.map((recipe) => {%>
 <div style="border-top:thick solid blue; margin:20; padding:10">
-    <h1 class="bg-warning"> <%= recipe.description %> </h1>
+    <h1 class="bg-warning"> <%= recipe.description %>: </h1>
+    <p>
+Ingredients are: <%= recipe.ingredients %>
+    </p>
 
 </div>
 <%})%>
 
-<%= JSON.stringify(results) %>
 
 
 <%- include('bootfooter') -%>
